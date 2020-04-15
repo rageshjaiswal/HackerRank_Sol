@@ -1,0 +1,28 @@
+if __name__ == '__main__':
+    name = []
+    score = []
+    for _ in range(int(input())):
+        name.append(input()) 
+        score.append(float(input()))
+    score_temp = score.copy()
+    min_score = min(score)
+    score_temp.sort()
+    for i in score_temp:
+        if min_score < i:
+            sec_score = i
+            break
+    b = []
+    for i in range(len(score)):
+        if sec_score == score[i]:
+            b.append(i)
+    new = []
+    for j in b:
+        new.append(name[j])
+    new.sort()
+    for k in new:
+        print(k)
+    
+    
+        
+
+  
