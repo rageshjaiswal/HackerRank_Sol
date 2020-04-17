@@ -1,4 +1,35 @@
-Q. Given the names and grades for each student in a Physics class of  students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
+CODE:
+
+if __name__ == '__main__':
+    name = []
+    score = []
+    for _ in range(int(input())):
+        name.append(input()) 
+        score.append(float(input()))
+    score_temp = score.copy()
+    min_score = min(score)
+    score_temp.sort()
+    for i in score_temp:
+        if min_score < i:
+            sec_score = i
+            break
+    b = []
+    for i in range(len(score)):
+        if sec_score == score[i]:
+            b.append(i)
+    new = []
+    for j in b:
+        new.append(name[j])
+    new.sort()
+    for k in new:
+        print(k)
+
+
+===================================================================================================================================
+
+QUESTION:
+
+Given the names and grades for each student in a Physics class of  students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
 
 Note: If there are multiple students with the same grade, order their names alphabetically and print each name on a new line.
 
@@ -39,31 +70,7 @@ python students = [['Harry', 37.21], ['Berry', 37.21], ['Tina', 37.2], ['Akriti'
 
 The lowest grade of  belongs to Tina. The second lowest grade of  belongs to both Harry and Berry, so we order their names alphabetically and print each name on a new line.
 
-===========================================================================================================================================
 
-if __name__ == '__main__':
-    name = []
-    score = []
-    for _ in range(int(input())):
-        name.append(input()) 
-        score.append(float(input()))
-    score_temp = score.copy()
-    min_score = min(score)
-    score_temp.sort()
-    for i in score_temp:
-        if min_score < i:
-            sec_score = i
-            break
-    b = []
-    for i in range(len(score)):
-        if sec_score == score[i]:
-            b.append(i)
-    new = []
-    for j in b:
-        new.append(name[j])
-    new.sort()
-    for k in new:
-        print(k)
     
     
         
